@@ -26,17 +26,46 @@ export interface Translations {
   };
   services: {
     title: string;
+    subtitle: string;
     storage: {
       title: string;
       description: string;
+      features: string[];
     };
     transport: {
       title: string;
       description: string;
+      features: string[];
     };
     maintenance: {
       title: string;
       description: string;
+      features: string[];
+    };
+    nauticalManagement: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    generalCheck: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    electricity: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    inflatables: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    upholstery: {
+      title: string;
+      description: string;
+      features: string[];
     };
   };
   whyUs: {
@@ -102,21 +131,103 @@ export const translations: Record<Language, Translations> = {
       contactButton: 'CONTACTO',
     },
     services: {
-      title: 'Servicios',
+      title: 'Nuestros Servicios',
+      subtitle: 'Soluciones integrales para el cuidado de su embarcación',
       storage: {
         title: 'Invernaje',
         description:
           'Tenemos diferentes opciones de almacenaje de barcos: Interior, Exterior cubierto y exterior descubierto. Todos con alta seguridad 24/7',
+        features: [
+          'Almacenamiento interior climatizado',
+          'Almacenamiento exterior cubierto',
+          'Almacenamiento exterior descubierto',
+          'Vigilancia 24/7 con CCTV',
+          'Hasta 50 metros de eslora',
+        ],
       },
       transport: {
-        title: 'Transporte',
+        title: 'Transporte Marítimo',
         description:
           'Transportamos tu barco del mar al almacén, y te lo devolvemos al puerto cuando estés listo para navegar de nuevo.',
+        features: [
+          'Transporte desde y hacia el puerto',
+          'Equipo especializado y certificado',
+          'Seguro de transporte incluido',
+          'Coordinación con marinas y clubs náuticos',
+          'Servicio puerta a puerta',
+        ],
       },
       maintenance: {
         title: 'Mantenimiento',
         description:
           'Te dejamos tu embarcación lista para navegar. Realizamos todo tipo de mantenimiento de obra viva, obra muerta, etc.',
+        features: [
+          'Mantenimiento de obra viva y obra muerta',
+          'Limpieza y preparación de casco',
+          'Revisión de sistemas mecánicos',
+          'Mantenimiento preventivo',
+          'Reparaciones menores y mayores',
+        ],
+      },
+      nauticalManagement: {
+        title: 'Gestoría Náutica',
+        description:
+          'Gestionamos todos los trámites administrativos y legales relacionados con su embarcación.',
+        features: [
+          'Tramitación de documentación náutica',
+          'Renovación de licencias y permisos',
+          'Gestión de seguros náuticos',
+          'Asesoramiento legal y fiscal',
+          'Gestiones con autoridades portuarias',
+        ],
+      },
+      generalCheck: {
+        title: 'Chequeo General',
+        description:
+          'Revisión completa de su embarcación para asegurar que esté en perfectas condiciones.',
+        features: [
+          'Inspección completa de la embarcación',
+          'Revisión de sistemas de seguridad',
+          'Chequeo de equipos de navegación',
+          'Evaluación de estado general',
+          'Informe detallado de condiciones',
+        ],
+      },
+      electricity: {
+        title: 'Electricidad y Electrónica',
+        description:
+          'Instalación, reparación y mantenimiento de todos los sistemas eléctricos y electrónicos de su embarcación.',
+        features: [
+          'Instalación y reparación eléctrica',
+          'Sistemas de navegación GPS',
+          'Equipos de comunicación',
+          'Iluminación LED y sistemas de energía',
+          'Diagnóstico y reparación de averías',
+        ],
+      },
+      inflatables: {
+        title: 'Neumáticas y Auxiliares',
+        description:
+          'Servicio especializado para embarcaciones neumáticas y equipos auxiliares.',
+        features: [
+          'Reparación y mantenimiento de neumáticas',
+          'Reemplazo de válvulas y parches',
+          'Mantenimiento de motores auxiliares',
+          'Revisión de sistemas de inflado',
+          'Almacenamiento de embarcaciones auxiliares',
+        ],
+      },
+      upholstery: {
+        title: 'Tapicería y Toldos',
+        description:
+          'Reparación, renovación y fabricación de tapicería y toldos para su embarcación.',
+        features: [
+          'Tapicería de interiores y exteriores',
+          'Fabricación y reparación de toldos',
+          'Cortinas y cojines personalizados',
+          'Materiales resistentes al agua y sol',
+          'Diseño a medida según sus necesidades',
+        ],
       },
     },
     whyUs: {
@@ -187,21 +298,103 @@ export const translations: Record<Language, Translations> = {
       contactButton: 'CONTACT',
     },
     services: {
-      title: 'Services',
+      title: 'Our Services',
+      subtitle: 'Comprehensive solutions for your vessel care',
       storage: {
         title: 'Wintering',
         description:
           'We have different boat storage options: Interior, Covered exterior and uncovered exterior. All with high security 24/7',
+        features: [
+          'Climate-controlled indoor storage',
+          'Covered outdoor storage',
+          'Uncovered outdoor storage',
+          '24/7 surveillance with CCTV',
+          'Up to 50 meters in length',
+        ],
       },
       transport: {
-        title: 'Transport',
+        title: 'Maritime Transport',
         description:
           'We transport your boat from the sea to the warehouse, and return it to the port when you are ready to sail again.',
+        features: [
+          'Transport from and to the port',
+          'Specialized and certified equipment',
+          'Transport insurance included',
+          'Coordination with marinas and yacht clubs',
+          'Door-to-door service',
+        ],
       },
       maintenance: {
         title: 'Maintenance',
         description:
           'We leave your vessel ready to sail. We perform all types of maintenance of the underwater hull, topside, etc.',
+        features: [
+          'Underwater and topside maintenance',
+          'Hull cleaning and preparation',
+          'Mechanical systems review',
+          'Preventive maintenance',
+          'Minor and major repairs',
+        ],
+      },
+      nauticalManagement: {
+        title: 'Nautical Management',
+        description:
+          'We manage all administrative and legal procedures related to your vessel.',
+        features: [
+          'Nautical documentation processing',
+          'License and permit renewals',
+          'Nautical insurance management',
+          'Legal and tax advice',
+          'Port authority procedures',
+        ],
+      },
+      generalCheck: {
+        title: 'General Check',
+        description:
+          'Complete review of your vessel to ensure it is in perfect condition.',
+        features: [
+          'Complete vessel inspection',
+          'Safety systems review',
+          'Navigation equipment check',
+          'General condition assessment',
+          'Detailed condition report',
+        ],
+      },
+      electricity: {
+        title: 'Electricity and Electronics',
+        description:
+          'Installation, repair and maintenance of all electrical and electronic systems of your vessel.',
+        features: [
+          'Electrical installation and repair',
+          'GPS navigation systems',
+          'Communication equipment',
+          'LED lighting and power systems',
+          'Diagnostics and breakdown repair',
+        ],
+      },
+      inflatables: {
+        title: 'Inflatables and Auxiliaries',
+        description:
+          'Specialized service for inflatable vessels and auxiliary equipment.',
+        features: [
+          'Inflatable boat repair and maintenance',
+          'Valve and patch replacement',
+          'Auxiliary engine maintenance',
+          'Inflating system review',
+          'Auxiliary vessel storage',
+        ],
+      },
+      upholstery: {
+        title: 'Upholstery and Awnings',
+        description:
+          'Repair, renovation and manufacturing of upholstery and awnings for your vessel.',
+        features: [
+          'Interior and exterior upholstery',
+          'Awning manufacturing and repair',
+          'Custom curtains and cushions',
+          'Water and sun resistant materials',
+          'Custom design according to your needs',
+        ],
       },
     },
     whyUs: {
