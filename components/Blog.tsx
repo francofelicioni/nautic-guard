@@ -2,102 +2,62 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
-
-interface BlogPost {
-  id: number;
-  title: {
-    es: string;
-    en: string;
-  };
-  excerpt: {
-    es: string;
-    en: string;
-  };
-  date: string;
-  image: string;
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: {
-      es: '¿Cuál es la mejor manera de mantener las velas de un barco?',
-      en: 'What is the best way to maintain boat sails?',
-    },
-    excerpt: {
-      es: 'Las velas de un velero son el motor de la embarcación ya que avanza debido...',
-      en: 'The sails of a sailboat are the engine of the vessel as it moves forward due to...',
-    },
-    date: '2024-01-24',
-    image: '⛵',
-  },
-  {
-    id: 2,
-    title: {
-      es: 'Tips de mantenimiento al motor antes de almacenar su barco',
-      en: 'Engine maintenance tips before storing your boat',
-    },
-    excerpt: {
-      es: 'Dar mantenimiento al motor antes de almacenar su barco en Mallorca o cualquier otro puerto....',
-      en: 'Maintaining the engine before storing your boat in Mallorca or any other port....',
-    },
-    date: '2024-07-15',
-    image: '🔧',
-  },
-  {
-    id: 3,
-    title: {
-      es: 'Cómo solucionar un problema en la gel coat',
-      en: 'How to fix a gel coat problem',
-    },
-    excerpt: {
-      es: 'Cuando los barcos impactan contra las rocas o incluso con la madera del muelle. En...',
-      en: 'When boats impact against rocks or even with the dock wood. In...',
-    },
-    date: '2024-08-08',
-    image: '🛠️',
-  },
-];
+import { blogPosts } from '@/lib/blogPosts';
 
 export default function Blog() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   return (
-    <section id="blog" className="py-16 bg-gray-50">
+    <section id="blog" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
-          {language === 'es' ? 'Últimas Publicaciones' : 'Latest Posts'}
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            {language === 'es' ? 'Últimas Publicaciones' : 'Latest Posts'}
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            {language === 'es' 
+              ? 'Consejos profesionales y guías útiles para el cuidado de su embarcación'
+              : 'Professional tips and useful guides for your vessel care'}
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
             >
-              <div className="text-6xl text-center py-8 bg-blue-50">
+              <div className="text-6xl text-center py-10 bg-gradient-to-br from-blue-50 to-blue-100 group-hover:from-blue-100 group-hover:to-blue-200 transition-colors">
                 {post.image}
               </div>
               <div className="p-6">
-                <p className="text-sm text-gray-500 mb-2">
-                  {new Date(post.date).toLocaleDateString(
-                    language === 'es' ? 'es-ES' : 'en-US',
-                    {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    }
-                  )}
-                </p>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-semibold text-blue-900 bg-blue-50 px-3 py-1 rounded-full">
+                    {post.category[language]}
+                  </span>
+                  <p className="text-sm text-gray-500">
+                    {new Date(post.date).toLocaleDateString(
+                      language === 'es' ? 'es-ES' : 'en-US',
+                      {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      }
+                    )}
+                  </p>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-900 transition-colors leading-tight">
                   {post.title[language]}
                 </h3>
-                <p className="text-gray-600 mb-4">{post.excerpt[language]}</p>
+                <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                  {post.excerpt[language]}
+                </p>
                 <Link
                   href={`/blog/${post.id}`}
-                  className="text-blue-900 font-medium hover:underline inline-flex items-center"
+                  className="text-blue-900 font-semibold hover:text-blue-700 inline-flex items-center group-hover:underline transition-colors"
                 >
                   {language === 'es' ? 'Leer más' : 'Read More'}
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -109,4 +69,3 @@ export default function Blog() {
     </section>
   );
 }
-
