@@ -1,0 +1,23 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield background with gradient effect -->
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M90 10L40 16V66C40 82 46 98 90 120C134 98 140 82 140 66V16L90 10Z" fill="url(#shieldGradient)" stroke="#1e3a8a" stroke-width="2"/>
+  
+  <!-- Anchor design -->
+  <!-- Anchor ring -->
+  <circle cx="90" cy="35" r="5" fill="white" stroke="#1e3a8a" stroke-width="1"/>
+  <!-- Anchor shank -->
+  <rect x="87" y="35" width="6" height="25" rx="3" fill="white"/>
+  <!-- Anchor stock (horizontal bar) -->
+  <rect x="70" y="55" width="40" height="4" rx="2" fill="white"/>
+  <!-- Anchor flukes (arms) -->
+  <path d="M70 57L60 70L70 72L70 57Z" fill="white"/>
+  <path d="M110 57L120 70L110 72L110 57Z" fill="white"/>
+  <!-- Anchor crown -->
+  <path d="M85 60L90 70L95 60L90 65L85 60Z" fill="white"/>
+</svg>
