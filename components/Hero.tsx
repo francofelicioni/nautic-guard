@@ -8,7 +8,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
+    <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -26,20 +26,20 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 md:py-32">
+      <div className="relative z-10 container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-32">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white drop-shadow-lg">
             {t.hero.title}
           </h1>
-          <h2 className="text-xl md:text-2xl mb-6 text-blue-100 drop-shadow-md">
+          <h2 className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 text-blue-100 drop-shadow-md">
             {t.hero.subtitle}
           </h2>
-          <p className="text-lg md:text-xl mb-8 text-blue-50 leading-relaxed drop-shadow-md max-w-2xl">
+          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-50 leading-relaxed drop-shadow-md max-w-2xl">
             {t.hero.description}
           </p>
           <Link
             href="#contact"
-            className="inline-block bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 transform"
+            className="inline-block bg-white text-blue-900 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 transform"
           >
             {t.hero.contactButton}
           </Link>

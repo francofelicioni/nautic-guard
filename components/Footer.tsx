@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">Nautic Guard</h3>
@@ -106,7 +106,7 @@ export default function Footer() {
             <div className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Nautic Guard. {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
             </div>
-            <div className="flex space-x-6 text-sm text-gray-400">
+            <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 text-xs sm:text-sm text-gray-400">
               <Link href="/legal" className="hover:text-white transition">
                 {t.footer.legal}
               </Link>

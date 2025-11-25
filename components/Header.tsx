@@ -16,20 +16,20 @@ export default function Header() {
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       {/* Top Bar */}
-      <div className="bg-blue-900 text-white py-2 text-sm">
+      <div className="bg-blue-900 text-white py-2 text-xs sm:text-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <span className="flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <span className="flex items-center text-xs sm:text-sm">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                Palma de Mallorca, España
+                <span className="truncate">Palma de Mallorca, España</span>
               </span>
             </div>
-            <div className="hidden md:flex items-center space-x-4">
-              <span className="text-blue-200">
+            <div className="hidden sm:flex items-center space-x-4">
+              <span className="text-blue-200 text-xs sm:text-sm">
                 {language === 'es' ? 'Vigilancia 24/7' : '24/7 Surveillance'}
               </span>
             </div>
@@ -39,19 +39,19 @@ export default function Header() {
 
       {/* Main Navigation */}
       <nav className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-900 rounded-lg group-hover:bg-blue-800 transition-colors">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
+            <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-blue-900 rounded-lg group-hover:bg-blue-800 transition-colors flex-shrink-0">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-3xl font-bold text-blue-900 leading-tight">
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 leading-tight">
                 Nautic Guard
               </span>
-              <span className="text-xs text-gray-600 font-medium uppercase tracking-wider">
+              <span className="text-[10px] sm:text-xs text-gray-600 font-medium uppercase tracking-wider hidden sm:block">
                 {language === 'es' ? 'Protección Náutica' : 'Nautical Protection'}
               </span>
             </div>

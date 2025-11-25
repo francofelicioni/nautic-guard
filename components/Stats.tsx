@@ -29,17 +29,17 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 sm:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 text-gray-900">
           {t.stats.title}
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
-              <div className="text-4xl font-bold text-blue-900 mb-2">{stat.value}</div>
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">{stat.label}</h3>
-              <p className="text-sm text-gray-600">{stat.description}</p>
+            <div key={index} className="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <div className="text-3xl sm:text-4xl font-bold text-blue-900 mb-2">{stat.value}</div>
+              <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-gray-900">{stat.label}</h3>
+              <p className="text-xs sm:text-sm text-gray-600">{stat.description}</p>
             </div>
           ))}
         </div>

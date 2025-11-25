@@ -31,13 +31,13 @@ export default function QuoteForm() {
   };
 
   return (
-    <section id="quote" className="py-16 bg-white">
+    <section id="quote" className="py-12 sm:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 text-gray-900">
             {t.quote.title}
           </h2>
-          <p className="text-center text-gray-600 mb-8">
+          <p className="text-center text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
             {t.quote.subtitle}
           </p>
 

@@ -6,19 +6,19 @@ export default function Contact() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="contact" className="py-16 bg-blue-50">
+    <section id="contact" className="py-12 sm:py-16 bg-blue-50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 text-gray-900">
             {t.nav.contact}
           </h2>
-          <p className="text-center text-gray-600 mb-12">
+          <p className="text-center text-gray-600 mb-8 sm:mb-12 text-sm sm:text-base px-4">
             {language === 'es'
               ? 'Estamos ubicados en Palma de Mallorca, España. Contáctanos para más información.'
               : 'We are located in Palma de Mallorca, Spain. Contact us for more information.'}
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4 text-blue-900">
                 {language === 'es' ? 'Ubicación' : 'Location'}
