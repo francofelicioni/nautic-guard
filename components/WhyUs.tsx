@@ -40,15 +40,6 @@ export default function WhyUs() {
             ))}
           </ul>
         </div>
-
-        <div className="text-center mt-8 sm:mt-12">
-          <a
-            href="#services"
-            className="inline-block bg-blue-900 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-blue-800 transition-colors"
-          >
-            {t.nav.services.toUpperCase()}
-          </a>
-        </div>
       </div>
     </section>
   );

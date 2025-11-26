@@ -88,14 +88,14 @@ export default function Footer() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21c-5-6-7-8.8-7-12A7 7 0 1112 21z" />
                 <circle cx="12" cy="9" r="2.5" />
               </svg>
-              Palma de Mallorca, España
+              de Alcúdia al Puerto km 1, Port d&apos;Alcúdia, 07400 Islas Baleares, Spain
             </p>
             <p className="text-gray-400 text-sm flex items-center gap-2">
               {/* Phone Icon */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5.75A2.75 2.75 0 015.75 3h.742c.516 0 .988.296 1.196.763l1.564 3.377a1.25 1.25 0 01-.272 1.37l-1.278 1.282a15.055 15.055 0 006.58 6.58l1.282-1.278a1.25 1.25 0 011.37-.272l3.377 1.564c.467.208.763.68.763 1.196v.742A2.75 2.75 0 0118.25 21h-.5C10.132 21 3 13.868 3 5.75v-.5z" />
               </svg>
-              123 456 789
+              +34671200223
             </p>
           </div>
         </div>

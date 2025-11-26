@@ -247,7 +247,7 @@ export const translations: Record<Language, Translations> = {
         'Queremos estar tranquilos al igual que lo estés tú. Por eso contamos con cámaras CCTV y alarma para que tus barcos estén protegidos con cualquiera de nuestras opciones.',
     },
     stats: {
-      title: '¿Qué opinan nuestros clientes?',
+      title: 'Nuestras métricas nos respaldan',
       transports: 'Transportes',
       transportsDesc: 'Desde el puerto hasta el almacén para que no te preocupes de nada más que navegar',
       wintered: 'Barcos invernados',
@@ -414,7 +414,7 @@ export const translations: Record<Language, Translations> = {
         'We want to be at ease just like you. That is why we have CCTV cameras and alarms so that your boats are protected with any of our options.',
     },
     stats: {
-      title: 'What Our Clients Say',
+      title: 'Our metrics speak for themselves',
       transports: 'Transports',
       transportsDesc: 'From the port to the warehouse so you don\'t have to worry about anything other than sailing',
       wintered: 'Wintered Boats',
