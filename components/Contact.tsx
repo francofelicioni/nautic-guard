@@ -61,7 +61,7 @@ export default function Contact() {
               <div className="flex items-center mb-4">
                 <div className="bg-blue-100 p-3 rounded-lg mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5.75A2.75 2.75 0 015.75 3h.742c.516 0 .988.296 1.196.763l1.564 3.377a1.25 1.25 0 01-.272 1.37l-1.278 1.282a15.055 15.055 0 006.58 6.58l1.282-1.278a1.25 1.25 0 011.37-.272l3.377 1.564c.467.208.763.68.763 1.196v.742A2.75 2.75 0 0118.25 21h-.5C10.132 21 3 13.868 3 5.75v-.5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-blue-900">
@@ -74,7 +74,7 @@ export default function Contact() {
               >
                 <span className="group-hover:underline">+34671200223</span>
                 <svg className="w-5 h-5 ml-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5.75A2.75 2.75 0 015.75 3h.742c.516 0 .988.296 1.196.763l1.564 3.377a1.25 1.25 0 01-.272 1.37l-1.278 1.282a15.055 15.055 0 006.58 6.58l1.282-1.278a1.25 1.25 0 011.37-.272l3.377 1.564c.467.208.763.68.763 1.196v.742A2.75 2.75 0 0118.25 21h-.5C10.132 21 3 13.868 3 5.75v-.5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </a>
               <p className="text-gray-500 text-sm mt-2">
