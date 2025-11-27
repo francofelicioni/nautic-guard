@@ -127,7 +127,7 @@ export const translations: Record<Language, Translations> = {
       title: 'Tu embarcación, nuestra responsabilidad',
       subtitle: 'El mejor servicio para alargar la vida de su embarcación',
       description:
-        'En Mallorca tenemos a su disposición nuestras amplias y modernas instalaciones para el adecuado invernaje de su embarcación ubicadas en las proximidades de la costa oeste y con fácil acceso desde las marinas y clubs náuticos de la bahía de Palma de Mallorca, Calvià y Andratx.',
+        'En Mallorca tenemos a su disposición nuestras amplias y modernas instalaciones para el adecuado invernaje de su embarcación ubicadas en las proximidades de la costa oeste y con fácil acceso desde las marinas y clubs náuticos de Port d\'Alcúdia.',
       contactButton: 'CONTACTO',
     },
     services: {
@@ -294,7 +294,7 @@ export const translations: Record<Language, Translations> = {
       title: 'Your vessel, our responsibility',
       subtitle: 'The best service to extend the life of your vessel',
       description:
-        'In Mallorca we have at your disposal our extensive and modern facilities for the proper wintering of your vessel located near the west coast and with easy access from the marinas and yacht clubs of the Bay of Palma de Mallorca, Calvià and Andratx.',
+        'In Mallorca we have at your disposal our extensive and modern facilities for the proper wintering of your vessel located near the west coast and with easy access from the marinas and yacht clubs of the Bay of Port d\'Alcúdia.',
       contactButton: 'CONTACT',
     },
     services: {
