@@ -83,7 +83,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t.footer.contactUs}</h4>
             <a 
-              href="https://maps.app.goo.gl/ejybJxvKXPXAAxpm7" 
+              href="https://maps.app.goo.gl/xNtDdLgEy5SDfHnJA" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 mb-3 flex items-start gap-2 hover:text-white transition-colors group block"

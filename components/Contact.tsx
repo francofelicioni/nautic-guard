@@ -37,7 +37,7 @@ export default function Contact() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6 text-blue-900 drop-shadow-sm">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-4 sm:mb-6 text-blue-900 drop-shadow-sm">
             {t.nav.contact}
           </h2>
           
@@ -65,12 +65,12 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-blue-900">
+                <h3 className="text-2xl sm:text-3xl font-bold text-blue-900">
                   {language === 'es' ? 'Ubicación' : 'Location'}
                 </h3>
               </div>
               <a 
-                href="https://maps.app.goo.gl/ejybJxvKXPXAAxpm7" 
+                href="https://maps.app.goo.gl/xNtDdLgEy5SDfHnJA" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block text-gray-800 hover:text-blue-900 transition-colors group"
@@ -101,7 +101,7 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-blue-900">
+                <h3 className="text-2xl sm:text-3xl font-bold text-blue-900">
                   {language === 'es' ? 'Teléfono' : 'Phone'}
                 </h3>
               </div>
