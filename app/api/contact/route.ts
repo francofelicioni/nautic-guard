@@ -23,21 +23,71 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate environment variables
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error('SMTP credentials not configured. Please check your .env.local file.');
+      return NextResponse.json(
+        { 
+          error: 'Email service not configured. Please contact the administrator.',
+          details: 'SMTP credentials are missing. Check server logs for more information.'
+        },
+        { status: 500 }
+      );
+    }
+
+    // Trim whitespace from credentials (common issue)
+    const smtpUser = process.env.SMTP_USER.trim();
+    const smtpPass = process.env.SMTP_PASS.trim();
+    const smtpHost = (process.env.SMTP_HOST || 'smtp.gmail.com').trim();
+    const smtpPort = parseInt(process.env.SMTP_PORT || '587');
+
+    // Validate credentials format
+    if (!smtpUser.includes('@')) {
+      console.error('SMTP_USER does not appear to be a valid email address');
+      return NextResponse.json(
+        { 
+          error: 'Invalid email configuration',
+          details: 'SMTP_USER must be a valid email address. Check your .env.local file.'
+        },
+        { status: 500 }
+      );
+    }
+
     // Configure nodemailer transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: parseInt(process.env.SMTP_PORT || '587'),
+      host: smtpHost,
+      port: smtpPort,
       secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: smtpUser,
+        pass: smtpPass,
       },
+      // Add debug logging in development
+      debug: process.env.NODE_ENV === 'development',
+      logger: process.env.NODE_ENV === 'development',
     });
+
+    // Verify connection before sending (helps catch auth errors early)
+    try {
+      await transporter.verify();
+    } catch (verifyError: any) {
+      console.error('SMTP connection verification failed:', verifyError);
+      if (verifyError.code === 'EAUTH' || verifyError.responseCode === 535) {
+        return NextResponse.json(
+          { 
+            error: 'Email authentication failed',
+            details: 'Invalid email credentials. For Gmail: 1) Enable 2-Step Verification, 2) Generate an App Password at https://myaccount.google.com/apppasswords, 3) Use the App Password (16 characters) in SMTP_PASS, NOT your regular password. See README-EMAIL-SETUP.md for detailed instructions.'
+          },
+          { status: 500 }
+        );
+      }
+      throw verifyError; // Re-throw if it's a different error
+    }
 
     // Email content
     const mailOptions = {
-      from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
+      from: (process.env.SMTP_FROM || smtpUser).trim(),
+      to: (process.env.CONTACT_EMAIL || smtpUser).trim(),
       subject: `Nueva solicitud de contacto - Nautic Guard - ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -102,10 +152,37 @@ Fecha: ${new Date().toLocaleString('es-ES')}
       { message: 'Email sent successfully' },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error sending email:', error);
+    
+    // Handle specific authentication errors
+    if (error.code === 'EAUTH' || error.responseCode === 535) {
+      return NextResponse.json(
+        { 
+          error: 'Email authentication failed',
+          details: 'Invalid email credentials. Please check your SMTP_USER and SMTP_PASS in .env.local. For Gmail, make sure you are using an App Password, not your regular password. See README-EMAIL-SETUP.md for instructions.'
+        },
+        { status: 500 }
+      );
+    }
+    
+    // Handle connection errors
+    if (error.code === 'ECONNECTION' || error.code === 'ETIMEDOUT') {
+      return NextResponse.json(
+        { 
+          error: 'Could not connect to email server',
+          details: 'Please check your SMTP_HOST and SMTP_PORT settings in .env.local'
+        },
+        { status: 500 }
+      );
+    }
+    
+    // Generic error
     return NextResponse.json(
-      { error: 'Failed to send email. Please try again later.' },
+      { 
+        error: 'Failed to send email. Please try again later.',
+        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      },
       { status: 500 }
     );
   }
